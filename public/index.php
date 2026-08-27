@@ -1,10 +1,10 @@
 <?php
 
-require __DIR__ . '/../vendor/autoload.php';
+define('LARAVEL_START', microtime(true));
 
-use App\Application;
+require __DIR__.'/../vendor/autoload.php';
 
-$application = new Application();
+/** @var \Illuminate\Foundation\Application $app */
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
-header('Content-Type: text/plain; charset=utf-8');
-echo $application->greeting();
+$app->handleRequest(\Illuminate\Http\Request::capture());
