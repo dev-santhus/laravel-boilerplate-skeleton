@@ -1,0 +1,7 @@
+*
+!.gitignore
+!database.sqlite
+!factories/
+!factories/.gitkeep
+!migrations/
+!migrations/.gitkeep
